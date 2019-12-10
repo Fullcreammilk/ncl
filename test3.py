@@ -13,20 +13,20 @@ class RootWin():
         self.second=StringVar()
 
         menu0 = Menu(self.root)  # 参数是父级控件
-        for x in ['SPS预测', 'EPS预测', '历史资料查询', '系统设置', '系统帮助']:
-            menu0.add_command(label=x,command = lambda :{self.first.set(x)})
         # 二级菜单
-        cascade0 = Menu(menu0)  # tearoff=False 表示这个菜单不可以被拖出来
-        for x in ['预测', '回报']:
-            cascade0.add_command(label=x,command = lambda : {self.second.set(x),
-                                                             self.begin()})
-        menu0.add_cascade(label='SPS预测', menu=cascade0)  # 在menu0中添加一个label为项目的级联菜单
+        cascade0 = Menu(menu0, tearoff=False)   # tearoff=False 表示这个菜单不可以被拖出来
+        for x in ['SPS预测预测', 'SPS预测回报']:
+            cascade0.add_radiobutton(label=x,variable = self.first,command = lambda : {self.begin()})
+
+        menu0.add_cascade(label='SPS预测', menu=cascade0)
+
+        for x in ['EPS预测', '历史资料查询', '系统设置', '系统帮助']:
+            menu0.add_command(label=x)
 
         self.root.config(menu=menu0)  # 窗口root的menu是menu0
-        self.cofigwin('SPS预测回报')
 
     def begin(self):
-        self.cofigwin(self.first+self.second)
+        self.cofigwin(self.first.get())
 
     def cofigwin(self,wintype):
         top = tk.Toplevel()
