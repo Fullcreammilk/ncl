@@ -3,4 +3,8 @@
 
 .idea/
 
+*.exe
+
+*spec
+
 # resource/
