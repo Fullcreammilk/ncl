@@ -48,7 +48,7 @@ class NCL(Frame):
         mainframe.button_cancel.grid(row=3, column=1,sticky=(N,W))
 
     def clickOK(self):
-        url = "resource/test.png"
+        url = "resource/2019-春-北半球-降水.png"
         pil_image = Image.open(url)
         pil_image = pil_image.resize((500, 500), Image.ANTIALIAS)
         self.img = ImageTk.PhotoImage(pil_image)

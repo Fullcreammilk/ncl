@@ -1,12 +1,10 @@
-import tkinter as tk
 from tkinter import *
 from tkinter import ttk
-from urllib.request import urlopen
 from PIL import Image, ImageTk
 
 # import make_pic_2   在这里导入自己的py包文件
 num = 1
-url = "resource/test.png"
+url = "resource/2019-春-北半球-降水.png"
 
 
 def calculate(*args):
@@ -20,19 +18,19 @@ def change():  # 更新图片操作
     global num
     num = num + 1
     if num % 3 == 0:
-        url1 = "resource/test.png"
+        url1 = "resource/2019-春-北半球-降水.png"
         pil_image = Image.open(url1)
         pil_image = pil_image.resize((500, 500), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(pil_image)
         label_img.configure(image=img)
     if num % 3 == 1:
-        url1 = "resource/test.png"
+        url1 = "resource/2019-春-北半球-降水.png"
         pil_image = Image.open(url1)
         pil_image = pil_image.resize((500, 500), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(pil_image)
         label_img.configure(image=img)
     if num % 3 == 2:
-        url1 = "resource/test.png"
+        url1 = "resource/2019-春-北半球-降水.png"
         pil_image = Image.open(url1)
         pil_image = pil_image.resize((500, 500), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(pil_image)
