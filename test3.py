@@ -90,7 +90,10 @@ class RootWin():
         url1="resource"
         url2="resource"
         for dir in dirs:
-            if year.get() in dir and season.get() in dir and area.get() in dir and factor.get() in dir:
+            if year.get() =='' or season.get() =='' or area.get() =='' or factor.get() =='':
+                url1="resource/error.png"
+                url2 = "resource/error.png"
+            elif year.get() in dir and season.get() in dir and area.get() in dir and factor.get() in dir:
                 url1=url1+'/'+dir
                 if precision.get() != '':
                     url2=url2+'/'+dir
